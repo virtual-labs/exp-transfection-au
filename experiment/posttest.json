@@ -2,37 +2,42 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. What is the instrument used for viewing the transfected cells?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Light microscope",
+        "b": "Fluorescent microscope",
+        "c": "Stereo microscope",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
+      
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
+
     {
-      "question": "This is a Sample Question 2?",
+      "question": "2. After adding transfection reagent how long it will take for complex formation?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "5 minute",
+        "b": "10 minute",
+        "c": "15 minute",
+        "d": "20 minute"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+
+
+    {
+      "question": "3. Which of the following technique is used for the transferring the DNA into the host cell?",
+      "answers": {
+        "a": "Sonication",
+        "b": "Transfection",
+        "c": "Centrifugation",
+        "d": "All the above"
       },
-      "correctAnswer": "c",
+     
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]
