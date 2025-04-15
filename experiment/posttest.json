@@ -2,15 +2,15 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "1. The Transfection is the technique which introducing---",
+      "question": "1. What is the instrument used for viewing the transfected cells?",
       "answers": {
-        "a": "Nucleic acids",
-        "b": "DNA",
-        "c": "RNA",
-        "d": "All the above"
+        "a": "Light microscope",
+        "b": "Fluorescent microscope",
+        "c": "Stereo microscope",
+        "d": "None of the above"
       },
       
-      "correctAnswer": "d",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
 
@@ -29,15 +29,15 @@
 
 
     {
-      "question": "3. How can we monitor the transfection efficiency?",
+      "question": "3. Which of the following technique is used for the transferring the DNA into the host cell?",
       "answers": {
-        "a": "GFP",
-        "b": "HEK",
-        "c": "CHO",
-        "d": "None of these"
+        "a": "Sonication",
+        "b": "Transfection",
+        "c": "Centrifugation",
+        "d": "All the above"
       },
      
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]
