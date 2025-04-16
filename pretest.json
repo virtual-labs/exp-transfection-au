@@ -1,0 +1,44 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. The Transfection is the technique which introducing---",
+      "answers": {
+        "a": "Nucleic acids",
+        "b": "DNA",
+        "c": "RNA",
+        "d": "All the above"
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "2. After adding transfection reagent how long it will take for complex formation?",
+      "answers": {
+        "a": "5 minute",
+        "b": "10 minute",
+        "c": "15 minute",
+        "d": "20 minute"
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+
+
+    {
+      "question": "3. How can we monitor the transfection efficiency?",
+      "answers": {
+        "a": "GFP",
+        "b": "HEK",
+        "c": "CHO",
+        "d": "None of these"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

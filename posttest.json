@@ -1,0 +1,44 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. What is the instrument used for viewing the transfected cells?",
+      "answers": {
+        "a": "Light microscope",
+        "b": "Fluorescent microscope",
+        "c": "Stereo microscope",
+        "d": "None of the above"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "2. After adding transfection reagent how long it will take for complex formation?",
+      "answers": {
+        "a": "5 minute",
+        "b": "10 minute",
+        "c": "15 minute",
+        "d": "20 minute"
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+
+
+    {
+      "question": "3. Which of the following technique is used for the transferring the DNA into the host cell?",
+      "answers": {
+        "a": "Sonication",
+        "b": "Transfection",
+        "c": "Centrifugation",
+        "d": "All the above"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}
