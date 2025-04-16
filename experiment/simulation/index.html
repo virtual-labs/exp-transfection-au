@@ -1,13 +1,224 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en" class="no-js">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+  
+  <!--It is a good practice to declare the encoding even for an 
+  English Web site. One function of this is to tag is to "reset"
+  the user's browser back to Latin-1 and ensure proper font 
+  settings. The Unicode "utf-8" encoding also ensures that any 
+  special characters inserted such as "Smart quotes", currency 
+  symbols, em-dashes and so forth will be properly displayed in
+  most browsers.-->
+  <meta http-equiv="Content-Type" content="text/html; 
+  charset=utf-8" >
+
+
+  <!-- The following meta element gives the appearance of using 
+  Internet Explorer (IE) but actually renders the page in google 
+  chrome thus rescuing the older IE versions and providing the 
+  speed and standards compliance, and security of Chrome 
+  http://tech18.com/google-chrome-frame-rescue-older-ie.html -->
+  <meta http-equiv="X-UA-Compatible" 
+  content="IE=edge,chrome=1"/>
+
+
+  <!-- The default title of the lab. -->
+  <title class="custom" id="page-title">Virtual Labs</title>
+  
+
+  <!-- Following meta tags store the information about the 
+  author and any other relevant information about the  code -->
+  <meta name="author" content="" class="custom">
+  <meta name="description" content="" class="custom">
+
+
+  <!-- Place the relative address of the favicon 
+  ("images/logo.jpeg" here). All major browsers support the link
+  rel="shortcut icon"  tag to associate a small icon with the 
+  page -->
+  <link rel="shortcut icon" href="../images/favicon.png" 
+  class="custom">
+
+
+  <!-- These are the stylesheets used for the lab. Please don't
+  edit them; If you do, you will lose the edits in subsequent 
+  releases of this User Interface. -->
+  <link rel="stylesheet" href="../css/default.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+
+
+  <!-- Instead add your custom styles to override the defaults 
+  coming from the above style sheets. -->
+  
+  <link rel="stylesheet" href="../css/override.css"/>
+
+  <!-- ***************************************************** -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which
+  enables HTML5 elements & feature detects -->
+  <script type="text/javascript" src="../../lib/js/modernizr-1.5.min.js">
+  </script>
+
+  <script src="../../lib/js/jquery-1.7.1.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() 
+    {		
+      //the function is called once the document loads     
+
+      $('#hidden-content').load('default.html #experiment', 
+              function(response,status,xhr)
+      {
+        //loads the default.html #lab section into the
+        //#hidden-content
+		
+        $('#container').load('content.html #experiment', 
+              function(response,status,xhr)
+        {
+          //loads the content.html #lab section into the
+	  //#container
+
+          homePage=$("div#experiment-header-heading a").html();
+          
+	  thisPage=$("article#experiment-article header#experiment-article-heading").html();
+        
+	  breadcrumb="<font color='white'>" + "<a href='../index.html'>Home<a/> \> <a href='../index.html'>" + homePage + "</a> \> <a href='index.html'>" + thisPage + "</a>"+ "</font>";
+        
+	  $("article#experiment-article div#experiment-article-breadcrumb").html(breadcrumb);
+				
+	  $("#container .default").each(function() 
+	  {
+            // Extracts all elements with class = "default"
+            // and top down
+            
+	    sectionId = $(this).attr('id');
+            sectionContent = $("#hidden-content #" + 
+                  sectionId).html();
+            $("#container #" + sectionId).html(sectionContent);
+	  });
+			
+	  $("#container #experiment-article-sections > section").each(function() 
+	  {
+	    // loads all the content in the respective
+	    // sections with the corresponding section headings 
+
+            sectionId = $(this).attr('id');
+	    headerId = $("#" + sectionId + "-heading").html();
+	    iconId = $("#" + sectionId + "-icon").html();
+
+	    $("#container #experiment-article-navigation ul").
+	      append("<li> <a href=\'#\' id=\'"+ sectionId + 
+              "-menu\'>" + iconId +"<br />" +
+              headerId + "</a></li>");
+	  });
+	
+	  /*			
+          $("#experiment-article-sections").after(
+            "<div id='experiment-article-sections-view'> </div>");
+	  $("#experiment-article-sections-view").html($(
+            "#experiment-article-sections section:first").html()); */
+    
+	  $("#experiment-article-sections section").hide();
+	  //hide all the experiment sections
+
+	  $("#experiment-article-sections section:first").show();
+	  //show only the first experiment section when
+	  //the experiment page loads
+	  
+	  $("#experiment-article-navigation ul > li a").live('click',
+            function()            
+          {	
+            //enables the navigation
+
+            menuId = $(this).attr('id'); 
+            // this points to the current element
+	    
+	    sectionId = menuId.replace(/-menu/i, "");
+	    /*
+	    $("#experiment-article-sections-view").html($(
+            "#experiment-article-sections #" + 
+            sectionId).html());
+	    */
+            
+	    $("#experiment-article-sections section").hide();
+	    $("#experiment-article-sections #" + sectionId).show();
+        });
+      });		
+    });
+  });
+
+  </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body> 
+  <div id="container"></div>
+  <div id="hidden-content"></div>
+  <div class="content">
+        <p><strong>Step 1:</strong> Download Adobe Flash Content Debugger </p>
+         <p>For 
+            <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe" target="_blank">Windows</a>, 
+            <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg" target="_blank">Macintosh</a>, 
+            <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux_debug.x86_64.tar.gz" target="_blank">Linux</a>
+        </p>
+	  <br>
+        <p><strong>Step 2:</strong> Open Flash debugger</p>
+	  <br>
+        <p><strong>Step 3:</strong> Copy this flash content link:<br>
+        <a href="https://vlab.amrita.edu/repo/PHY/BEC/ACCircuitSimulation/LCR%20Circuit%20Simulation.swf" target="_blank">
+            https://vlab.amrita.edu/repo/PHY/BEC/ACCircuitSimulation/LCR%20Circuit%20Simulation.swf
+        </a></p>
+	  <br>
+        <p><strong>Step 4:</strong> Click <em>File → Open</em> from the Flash debugger menu</p>
+	  <br>
+        <p><strong>Step 5:</strong> Paste the flash content link in the Open window of the Flash debugger and click OK.</p>
+	  <br>
+	  <br>
+
+         <p><strong>Other alternatives to access Flash content on Mobile phone or Tablet</strong></p>
+        <p>Install Puffin browser</p>
+	  <br>
+        <p><strong>Android:</strong><br>
+        <a href="https://play.google.com/store/apps/details?id=com.cloudmosa.puffinFree&hl=en_IN&gl=US" target="_blank">
+            https://play.google.com/store/apps/details?id=com.cloudmosa.puffinFree&hl=en_IN&gl=US
+        </a></p><br>
+        <p><strong>Windows/Mac:</strong><br>
+        <a href="https://www.puffin.com/" target="_blank">https://www.puffin.com/</a></p>
+   </div>	
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!--<script type="text/javascript" src="../js/MathJax/MathJax.js"> -->
+  <!--  </script> -->
+
+  <!-- ******** ADD/OVERRIDE JAVASCRIPT FILES HERE ********* -->
+
+  <!-- ***************************************************** -->
+  
 </body>
 </html>
